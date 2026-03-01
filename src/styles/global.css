@@ -1,0 +1,39 @@
+body {
+  background-color: #ede0d4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='900' viewBox='0 0 1440 900'%3E%3Cg fill='none' stroke='rgba(107,76,59,0.07)' stroke-width='1.5'%3E%3Cpath d='M-100 400 Q200 200 500 450 T1100 350 T1600 400'/%3E%3Cpath d='M-100 500 Q300 300 600 500 T1200 400 T1600 500'/%3E%3Cpath d='M-100 300 Q250 150 550 380 T1150 280 T1600 300'/%3E%3Cpath d='M-100 600 Q350 400 650 580 T1250 480 T1600 600'/%3E%3Cpath d='M-100 200 Q400 50 700 280 T1300 180 T1600 200'/%3E%3Cpath d='M-100 700 Q300 550 600 680 T1200 580 T1600 700'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ede0d4; --bg2: #e6d5c5; --bg3: #dfc9b5;
+  --brown: #6b4c3b; --brown-light: #9c7b6a; --brown-dark: #4a2e1e;
+  --text: #2c1a10; --text-dim: #5a3e30; --text-faint: #8a6a58;
+  --white: #1e0f07; --gold: #a0622a;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Raleway', sans-serif; font-weight: 300; overflow-x: hidden; }
+input, button, textarea { font-family: inherit; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--brown-light); border-radius: 2px; }
+
+@keyframes fadeUp   { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:none; } }
+@keyframes fadeIn   { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+@keyframes pulse    { 0%,100%{transform:scale(1);opacity:.5} 50%{transform:scale(1.1);opacity:1} }
+@keyframes noteIn   { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+@keyframes spin     { to { transform: rotate(360deg); } }
+@keyframes blink    { 0%,100%{opacity:1} 50%{opacity:.3} }
+@keyframes reticlePulse { 0%,100%{border-color:rgba(201,168,76,.3)} 50%{border-color:rgba(201,168,76,.9)} }
+@keyframes cvScan   { 0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0} }
+@keyframes fbIn     { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+@keyframes toastIn  { from{opacity:0;transform:translate(-50%,12px)} to{opacity:1;transform:translate(-50%,0)} }
+@keyframes dashIn   { from{transform:translateX(100%)} to{transform:translateX(0)} }
+@keyframes authIn   { from{opacity:0} to{opacity:1} }
+@keyframes scanBar  { 0%{top:8%;opacity:0} 8%{opacity:1} 92%{opacity:1} 100%{top:92%;opacity:0} }
+
+.reveal { opacity:0; transform:translateY(50px); transition:opacity .8s ease,transform .8s ease; }
+.reveal.visible { opacity:1; transform:none; }

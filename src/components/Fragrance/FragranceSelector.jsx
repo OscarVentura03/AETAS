@@ -9,6 +9,7 @@ export default function FragranceSelector({ chapterIdx, saved, onToggleSave, onO
   const [selectedFrag, setSelectedFrag] = useState(null);
   const [confirmed,    setConfirmed]    = useState(false);
   const [formulaId,    setFormulaId]    = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [showTip,      setShowTip]      = useState(false);
 
   const families = ["all","floral","woody","chypre","oriental","fresh","fougere"];

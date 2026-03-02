@@ -1,5 +1,3 @@
-import { C } from "../../utils/constants";
-
 export default function Icon({ name, size = 20, color = "currentColor", style: extraStyle = {} }) {
   const s = { width: size, height: size, display: "inline-block", verticalAlign: "middle", flexShrink: 0, ...extraStyle };
   const paths = {

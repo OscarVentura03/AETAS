@@ -88,8 +88,18 @@ export default function App() {
   };
 
   return (
-    <div style={{ background:C.bg, minHeight:"100vh", color:C.text }}>
-      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:200, padding:"20px 48px", display:"flex", alignItems:"center", justifyContent:"space-between", background:"rgba(237,224,212,.96)", backdropFilter:"blur(8px)", borderBottom:`1px solid rgba(107,76,59,.1)` }}>
+<div style={{ background:"#ede8e0", minHeight:"100vh", color:C.text, position:"relative" }}>
+  <div style={{
+    position:"fixed",
+    inset:0,
+    backgroundImage:"url('/AETAS_15_.png')",
+    backgroundSize:"cover",
+    backgroundPosition:"center",
+    backgroundRepeat:"no-repeat",
+    opacity:1,
+    zIndex:0,
+    pointerEvents:"none",
+  }} />      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:200, padding:"20px 48px", display:"flex", alignItems:"center", justifyContent:"space-between", background:"rgba(237,224,212,.96)", backdropFilter:"blur(8px)", borderBottom:`1px solid rgba(107,76,59,.1)` }}>
         <a href="#top" style={{ fontFamily:F.cin, fontSize:20, letterSpacing:"0.35em", color:C.brown, textDecoration:"none" }}>AETAS</a>
         <ul style={{ display:"flex", gap:32, listStyle:"none" }}>
           <li><a href="#features" style={navLinkStyle}>Technology</a></li>
@@ -102,8 +112,7 @@ export default function App() {
         </ul>
       </nav>
 
-      <div id="top" style={{ height:"100vh", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", textAlign:"center", position:"relative", overflow:"hidden", paddingTop:80 }}>
-        <div style={{ position:"absolute", width:600, height:600, borderRadius:"50%", background:"radial-gradient(circle,rgba(107,76,59,.07) 0%,transparent 70%)", animation:"pulse 6s ease-in-out infinite" }} />
+<div id="top" style={{ height:"100vh", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", textAlign:"center", position:"relative", zIndex:1, overflow:"hidden", paddingTop:80 }}>        <div style={{ position:"absolute", width:600, height:600, borderRadius:"50%", background:"radial-gradient(circle,rgba(107,76,59,.07) 0%,transparent 70%)", animation:"pulse 6s ease-in-out infinite" }} />
         <p style={{ fontSize:9, letterSpacing:"0.5em", textTransform:"uppercase", color:C.brown, marginBottom:28, animation:"fadeUp 1s ease forwards", opacity:0 }}>A L'Oréal Luxe — Armani Privé Concept</p>
         <h1 style={{ fontFamily:F.cor, fontWeight:300, fontSize:"clamp(80px,12vw,160px)", lineHeight:0.9, letterSpacing:"-0.02em", color:C.white, animation:"fadeUp 1.2s ease .2s forwards", opacity:0 }}>
           AE<em style={{ fontStyle:"italic", color:C.brown }}>T</em>AS
@@ -115,8 +124,7 @@ export default function App() {
         </div>
       </div>
 
-      <div id="features" style={{ background:C.bg2 }}>
-        <div style={{ display:"flex", overflowX:"auto", borderBottom:`1px solid rgba(107,76,59,.15)` }}>
+<div id="features" style={{ background:C.bg2, position:"relative", zIndex:1 }}>        <div style={{ display:"flex", overflowX:"auto", borderBottom:`1px solid rgba(107,76,59,.15)` }}>
           {hubTabs.map((t, i) => (
             <button key={i} onClick={() => setActiveHub(i)} style={{ flex:1, minWidth:140, padding:"28px 20px", background: activeHub===i?C.bg:"transparent", border:"none", borderBottom: activeHub===i?`3px solid ${C.brown}`:"3px solid transparent", cursor:"pointer", textAlign:"center", transition:"all .3s", display:"flex", flexDirection:"column", alignItems:"center", gap:8 }}>
               <span style={{ fontSize:22 }}>{t.icon}</span>
@@ -168,12 +176,11 @@ export default function App() {
         </div>
       </div>
 
-  <div id="selector">
+  <div id="selector" style={{ position:"relative", zIndex:1 }}>
         <FragranceSelector chapterIdx={chapterIdx} saved={saved} onToggleSave={toggleSave} onOpenAuth={() => setShowAuth(true)} isLoggedIn={!!user} onGoToQuiz={() => { setActiveHub(1); document.getElementById("features").scrollIntoView({behavior:"smooth"}); }} />
       </div>
 
-      <footer style={{ padding:64, borderTop:`1px solid rgba(107,76,59,.12)`, display:"flex", justifyContent:"space-between", alignItems:"flex-end" }}>
-        <div>
+<footer style={{ padding:64, borderTop:`1px solid rgba(107,76,59,.12)`, display:"flex", justifyContent:"space-between", alignItems:"flex-end", position:"relative", zIndex:1 }}>        <div>
           <div style={{ fontFamily:F.cin, fontSize:26, letterSpacing:"0.35em", color:C.brown }}>AETAS</div>
           <div style={{ fontFamily:F.cor, fontStyle:"italic", fontSize:15, color:C.textDim, marginTop:6 }}>The fragrance that evolves with you.</div>
         </div>

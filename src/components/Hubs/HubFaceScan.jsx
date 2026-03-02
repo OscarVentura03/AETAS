@@ -12,6 +12,7 @@ export default function HubFaceScan({ chapterIdx, onChapterSet }) {
   const videoRef    = useRef(null);
   const canvasRef   = useRef(null);
   const streamRef   = useRef(null);
+  // eslint-disable-next-line no-unused-vars
   const rafRef      = useRef(null);
   const samplesRef  = useRef([]);
   const startTimeRef = useRef(0);
